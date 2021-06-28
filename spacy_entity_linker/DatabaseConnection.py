@@ -11,7 +11,7 @@ conn = None
 entity_cache = {}
 chain_cache = {}
 
-DB_DEFAULT_PATH = os.path.abspath(__file__ + '/../../data_spacy_entity_linker/wikidb_filtered.db')
+DB_DEFAULT_PATH = os.path.abspath('/u/venia/miniconda3/lib/python3.7/site-packages/data_spacy_entity_linker/wikidb_filtered.db')
 
 wikidata_instance = None
 
@@ -49,7 +49,7 @@ class WikidataQueryController:
             self.cache[cache_type][key] = value
 
     def init_database_connection(self, path=DB_DEFAULT_PATH):
-        self.conn = sqlite3.connect(path)
+        self.conn = sqlite3.connect("/u/venia/miniconda3/lib/python3.7/site-packages/data_spacy_entity_linker/wikidb_filtered.db")
 
     def clear_cache(self):
         self.cache["entity"].clear()
